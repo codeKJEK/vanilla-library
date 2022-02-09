@@ -1,0 +1,159 @@
+:root {
+  --color-light: rgb(242, 242, 242);
+  --color-dark: rgb(13, 13, 13);
+  --color-banner: rgb(230, 230, 230);
+  --color-icon: rgb(64, 64, 64);
+  --height-logo: 3.5rem;
+  --height-logo-desktop: 3.5rem;
+  --border-mid: 1px solid rgb(204, 204, 204);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.flex__cc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  background-color: var(--color-banner);
+}
+
+.banner__skip,
+.banner__logo {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.banner__skip:focus,
+.banner__logo:focus,
+.banner__menuitem:focus {
+  text-decoration: underline;
+}
+
+.banner__skip {
+  position: absolute;
+  width: 100%;
+  min-height: var(--height-logo);
+  z-index: 1;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.banner__skip:focus {
+  transform: translateY(0);
+}
+
+.banner__logo {
+  min-height: var(--height-logo);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.banner__logo span {
+  color: rgb(0, 119, 179);
+}
+
+.banner__nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-banner);
+}
+
+.banner__list {
+  margin: 0;
+  padding: 0;
+  min-height: var(--height-logo);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.banner__menuitem {
+  font-size: 0.883em;
+  min-height: var(--height-nav);
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-icon);
+}
+
+.banner__icon {
+  margin: 0;
+  fill: var(--color-icon);
+}
+
+@media screen and (min-width: 426px) {
+  .banner__list {
+    width: 426px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .banner__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .banner__logo,
+  .banner__skip,
+  .banner__menuitem {
+    height: var(--height-logo-desktop);
+  }
+
+  .banner__skip:hover,
+  .banner__logo:hover,
+  .banner__menuitem:hover {
+    text-decoration: underline;
+  }
+
+  .banner__logo {
+    padding: 0 2rem;
+  }
+
+  .banner__nav {
+    position: static;
+    background-color: transparent;
+    width: unset;
+    margin-right: 1.5rem;
+  }
+
+  .banner__list {
+    width: unset;
+    margin: 0;
+  }
+
+  .banner__menuitem {
+    padding: 0 0.25rem;
+    margin: 0 0.25rem;
+    color: var(--color-dark);
+    font-size: 1em;
+  }
+
+  .banner__icon {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .banner__container {
+    max-width: 1025px;
+    margin: 0 auto;
+  }
+}
